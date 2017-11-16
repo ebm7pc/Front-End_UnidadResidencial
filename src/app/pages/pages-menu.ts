@@ -9,9 +9,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
 
   {
-    title: 'Cursos',
+    title: 'Registrar Visitante',
     icon: 'nb-compose',
-    link: '/reg-actividades/cursos',
+    link: '/registros',
+    children: [
+      {
+        title: 'visitante',
+        link: '/registros/registrar-visitante',
+      },
+    ],
   },
   
   {
