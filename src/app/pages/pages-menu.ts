@@ -13,7 +13,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   /*{
     title: 'FEATURES',
     group: true,
-  },
+  },*/
   {
     title: 'UI Features',
     icon: 'nb-keypad',
@@ -48,7 +48,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/ui-features/tabs',
       },
     ],
-  },*/
+  },
   {
     title: 'Visitantes',
     icon: 'nb-compose',
