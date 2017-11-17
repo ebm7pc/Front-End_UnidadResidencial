@@ -30,9 +30,21 @@ export class ModalsComponent {
       container: 'nb-layout',
     });
 
-    activeModal.componentInstance.modalHeader = 'Static modal';
-    activeModal.componentInstance.modalContent = `This is static modal, backdrop click
-                                                    will not close it. Click × or confirmation button to close modal.`;
+    activeModal.componentInstance.modalHeader = 'Registrar Vehículo';
+    activeModal.componentInstance.modalContent = `<table>
+    <tr>
+        <td>Nombre: </td>
+        <td><input type="text" name="Nombre" placeholder="Ingrese el nombre" size="35" required></td>
+    </tr>
+    <tr>
+        <td>Edad: </td>
+        <td><input type="number" name="Edad" placeholder="Ingrese la edad" size="20" required></td>
+    </tr>
+    <tr>
+        <td>Correo Electrónico: </td>
+        <td><input type="email" name="Correo" placeholder="Ingrese el nombre" size="50" required></td>
+    </tr>
+</table>`;
   }
 
 }

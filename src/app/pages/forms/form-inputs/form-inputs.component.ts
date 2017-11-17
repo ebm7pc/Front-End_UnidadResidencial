@@ -15,8 +15,8 @@ export class FormInputsComponent {
 constructor(public emergente : ModalsComponent){
 }
 
-registrar (){
-
+registrar()
+{
+  this.emergente.showStaticModal();
 }
 }
-
