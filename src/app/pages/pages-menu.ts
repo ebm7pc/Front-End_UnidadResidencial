@@ -61,6 +61,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Control de acceso',
         link: '/pages/forms/layouts',
       },
+      {
+        title: 'Ventanas Emergentes',
+        link: '/pages/forms/emergentes',
+      },
     ],
   },
  /* {

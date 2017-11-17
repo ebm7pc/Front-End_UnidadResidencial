@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ThemeModule } from '../../@theme/theme.module';
 import { FormsRoutingModule, routedComponents } from './forms-routing.module';
 
+
 @NgModule({
   imports: [
     ThemeModule,
@@ -11,5 +12,6 @@ import { FormsRoutingModule, routedComponents } from './forms-routing.module';
   declarations: [
     ...routedComponents,
   ],
+
 })
 export class FormsModule { }
