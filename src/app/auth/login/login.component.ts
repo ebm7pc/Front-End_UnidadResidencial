@@ -36,7 +36,7 @@ export class LoginComponent {
 
     this.servicios.login(this.user.email,this.user.password).subscribe(result =>{
       if(result == "Administrador" ){        
-        this.returnUrl='/reg-actividades/cursos/detalles-cursos';
+        this.returnUrl='/pages/forms';
         this.router.navigate([this.returnUrl]);
       }
       else{

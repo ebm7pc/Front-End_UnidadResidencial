@@ -1,26 +1,16 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
-  {
+  /*{
     title: 'Dashboard',
     icon: 'nb-home',
     link: '/pages/dashboard',
     home: true,
-  },
+  },*/
 
-  {
-    title: 'Registrar Visitante',
-    icon: 'nb-compose',
-    link: '/registros',
-    children: [
-      {
-        title: 'visitante',
-        link: '/registros/registrar-visitante',
-      },
-    ],
-  },
+ 
   
-  {
+  /*{
     title: 'FEATURES',
     group: true,
   },
@@ -58,22 +48,22 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/ui-features/tabs',
       },
     ],
-  },
+  },*/
   {
-    title: 'Forms',
+    title: 'Visitantes',
     icon: 'nb-compose',
     children: [
       {
-        title: 'Form Inputs',
+        title: 'Registro de Visitante',
         link: '/pages/forms/inputs',
       },
       {
-        title: 'Form Layouts',
+        title: 'Control de acceso',
         link: '/pages/forms/layouts',
       },
     ],
   },
-  {
+ /* {
     title: 'Components',
     icon: 'nb-gear',
     children: [
@@ -167,5 +157,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/auth/reset-password',
       },
     ],
-  },
+  },*/
 ];

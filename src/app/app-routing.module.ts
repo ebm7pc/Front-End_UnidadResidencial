@@ -12,20 +12,10 @@ import {
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RequestPasswordComponent } from './auth/request-password/request.password.component';
-import { RegistroComponent } from './registros/registro.component';
-import { FormInputsComponent } from './registros/form-inputs/form-inputs.component';
+
 
 const routes: Routes = [
-  {
-    path: 'registros', 
-    component: RegistroComponent,
-    children: [
-      {
-        path: 'registrar-visitante',
-        component: FormInputsComponent,
-      },
-    ],
-  },  
+ 
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
   { path: 'reg-actividades', loadChildren: 'app/reg-actividades/reg-actividades.module#RegistroActividadesModule' },
   {

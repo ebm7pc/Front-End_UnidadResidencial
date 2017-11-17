@@ -16,8 +16,7 @@ import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AuthModule } from './auth/auth.module';
-import { RegistroComponent } from './registros/registro.component';
-import { RegistroModule } from './registros/registro.module';
+
 
 
 @NgModule({
@@ -27,10 +26,9 @@ import { RegistroModule } from './registros/registro.module';
     BrowserAnimationsModule,
     HttpModule,
     AppRoutingModule,
-
+   
     AuthModule,
-    RegistroComponent,
-    RegistroModule,
+   
 
     NgbModule.forRoot(),
     ThemeModule.forRoot(),

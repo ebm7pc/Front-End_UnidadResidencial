@@ -1,5 +1,64 @@
 <div class="row">
   <div class="col-lg-6">
+   
+    <nb-card>
+          <nb-card-header>Registro de visitante</nb-card-header>
+          <nb-card-body>
+            <form (ngSubmit)="form.form.valid && registar()" #form="ngForm" autocomplete="nope">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Número de ficho</label>
+                <input type="number" class="form-control"  name="ficho" id="Nficho" placeholder="Número de ficho" 
+                 [class.form-control-danger]="ficho.invalid && ficho.touched" autofocus [required]="true">
+                 <small  align="left" class="form-text error" *ngIf="ficho.invalid && ficho.touched && ficho.errors?.required">
+                    Nombre de ficho requerido!</small>
+              </div>
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="inputFirstName">Nombres</label>
+                      <input type="text" class="form-control" id="inputFirstName" placeholder="Nombres">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="inputLastName">Apellidos</label>
+                      <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos">
+                    </div>
+                  </div>
+                </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Identificación</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificacíon">
+              </div>
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="inputFirstName">Responsable </label>
+                      <input type="text" class="form-control" id="inputFirstName" placeholder="Responsable de recibir al visitante">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="inputLastName">Apartamento</label>
+                      <input type="text" class="form-control" id="inputLastName" placeholder="Apartamento de destino">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Fecha de salida</label>
+                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Fecha de posible salida de la unidad">
+                  </div>
+
+              
+              <div class="form-group">
+                <nb-checkbox>Tiene vehículo</nb-checkbox>
+              </div>
+              <button [disabled]="!form.valid" class="btn btn-success" >Registrar</button>
+            </form>
+          </nb-card-body>
+        </nb-card>
+     
+
     <nb-card>
       <nb-card-header>Default Inputs</nb-card-header>
       <nb-card-body>

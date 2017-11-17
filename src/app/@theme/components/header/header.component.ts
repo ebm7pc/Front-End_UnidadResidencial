@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   user: any;
 
   //userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
-  userMenu = [{ title: 'Cerra sesión', link:'/auth-ra/login' },{title:'Cambiar contraseña', link:'/auth-ra/reset-password'}];
+  userMenu = [{ title: 'Cerra sesión', link:'/auth-ra/login' }];
   
 
   constructor(private sidebarService: NbSidebarService,
