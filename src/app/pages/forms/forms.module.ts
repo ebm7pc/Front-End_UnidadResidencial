@@ -5,6 +5,8 @@ import { FormsRoutingModule, routedComponents } from './forms-routing.module';
 import {ServiciosService} from './form-layouts/form-layouts.service';
 import { ModalsComponent } from '../ui-features/modals/modals.component';
 import { ModalComponent } from '../ui-features/modals/modal/modal.component';
+import { RegistroService } from './form-inputs/form-inputs.service';
+import { ModalService } from 'app/pages/ui-features/modals/modal/modal.service';
 
 const components = [
   ModalsComponent,
@@ -27,6 +29,8 @@ const components = [
   providers: [
     ServiciosService,   
     ModalsComponent,
+    RegistroService,
+    ModalService,
   ],
 
 })

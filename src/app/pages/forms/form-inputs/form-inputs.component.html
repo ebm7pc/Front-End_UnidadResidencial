@@ -7,50 +7,49 @@
         <form (ngSubmit)="form.form.valid && registrar()" #form="ngForm" autocomplete="nope">
           <div class="form-group">
             <label for="exampleInputEmail1">Número de ficho</label>
-            <input type="number" class="form-control" name="ficho" id="Nficho" placeholder="Número de ficho">
-
+            <input type="number" class="form-control" name="ficho" id="Nficho" placeholder="Número de ficho" [(ngModel)]="user.ficho">
           </div>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="inputFirstName">Nombres</label>
-                <input type="text" class="form-control" id="inputFirstName" placeholder="Nombres">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Nombres" [(ngModel)]="user.nombre" name="nombre">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="inputLastName">Apellidos</label>
-                <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos" [(ngModel)]="user.apellido" name="apellido">
               </div>
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Identificación</label>
-            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificacíon">
+            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificacíon" [(ngModel)]="user.identif" name="identif">
           </div>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="inputFirstName">Responsable </label>
-                <input type="text" class="form-control" id="inputFirstName" placeholder="Responsable de recibir al visitante">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Responsable de recibir al visitante" [(ngModel)]="user.responsable" name="resp">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="inputLastName">Apartamento</label>
-                <input type="text" class="form-control" id="inputLastName" placeholder="Apartamento de destino">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Apartamento de destino" [(ngModel)]="user.apartamento" name="apto">
               </div>
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Fecha de salida</label>
-            <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Fecha de posible salida de la unidad">
+            <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Fecha de posible salida de la unidad" [(ngModel)]="user.fechaSalida" (ngModelChange)="formatoFecha()" name="salida">
           </div>
           <div class="form-group">
-            <nb-checkbox>Tiene vehículo</nb-checkbox>
+            <nb-checkbox name="tienevehi" [(ngModel)]="user.tieneVehi">Tiene vehículo</nb-checkbox>
           </div>
           <div class="form-group">
-            <button class="btn btn-success" >Registrar</button>
+            <button class="btn btn-success">Registrar</button>
           </div>
         </form>
       </nb-card-body>

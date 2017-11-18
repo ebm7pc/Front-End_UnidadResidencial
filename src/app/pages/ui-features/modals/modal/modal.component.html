@@ -8,24 +8,24 @@
     {{ modalContent }}
 </div> -->
 <div class="modal-dialog">
-    <form (ngSubmit)="form.form.valid && registrar()" #form="ngForm" autocomplete="nope">
+    <form (ngSubmit)="form.form.valid && closeModal()" #form="ngForm" autocomplete="nope">
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
                     <label for="inputFirstName">Placa</label>
-                    <input type="text" class="form-control" id="inputFirstName" size="10" placeholder="Placa">
+                    <input type="text" class="form-control" id="inputFirstName" size="10" placeholder="Placa" [(ngModel)]="placa" name="placa">
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
                     <label for="inputLastName">Marca</label>
-                    <input type="text" class="form-control" id="inputLastName" size="10" placeholder="Marca">
+                    <input type="text" class="form-control" id="inputLastName" size="10" placeholder="Marca" [(ngModel)]="marca" name="marca">
                 </div>
             </div>
         </div>
         <br>
         <div class="form-group2">
-            <button class="btn btn-success" (click)="registrar()">Registrar</button>
+            <button class="btn btn-success">Registrar</button>
         </div>
         <!-- <div class="modal-footer">
             <button class="btn btn-md btn-primary" (click)="closeModal()">Save changes</button>
