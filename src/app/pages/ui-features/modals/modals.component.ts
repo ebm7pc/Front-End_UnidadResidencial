@@ -16,7 +16,8 @@ export class ModalsComponent {
     const activeModal = this.modalService.open(ModalComponent, { 
       size: 'lg',
       backdrop: 'static',
-      container: 'nb-layout' 
+      keyboard: false,
+      container: 'nb-layout' ,
     });
 
     activeModal.componentInstance.modalHeader = 'REGISTRAR VEHÍCULO';
