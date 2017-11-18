@@ -1,1 +1,70 @@
+<div class="modal-header">
+    <span>{{ modalHeader }}</span>
+    <!-- <button class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button> -->
+</div>
+<div class="modal-body">
+    {{ modalContent }}
+</div>
 
+
+<div class="pre-form">
+        <form (ngSubmit)="form.form.valid && registar()" #form="ngForm" autocomplete="nope">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Número de ficho</label>
+                  <input type="number" class="form-control" name="ficho" id="Nficho" placeholder="Número de ficho">
+      
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="inputFirstName">Nombres</label>
+                      <input type="text" class="form-control" id="inputFirstName" placeholder="Nombres">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="inputLastName">Apellidos</label>
+                      <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Identificación</label>
+                  <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificacíon">
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="inputFirstName">Responsable </label>
+                      <input type="text" class="form-control" id="inputFirstName" placeholder="Responsable de recibir al visitante">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="inputLastName">Apartamento</label>
+                      <input type="text" class="form-control" id="inputLastName" placeholder="Apartamento de destino">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Fecha de salida</label>
+                  <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Fecha de posible salida de la unidad">
+                </div>
+                <div class="form-group">
+                  <nb-checkbox>Tiene vehículo</nb-checkbox>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-success" (click)="registrar()">Registrar</button>
+                </div>
+              </form>
+</div>
+
+
+<div>
+    <input type="text" id="placa" size="25"  placeholder="Ingrese la placa del vehículo" required>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-md btn-primary" (click)="closeModal()">Save changes</button>
+</div>

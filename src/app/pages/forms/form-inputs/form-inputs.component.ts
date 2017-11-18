@@ -17,6 +17,6 @@ constructor(public emergente : ModalsComponent){
 
 registrar()
 {
-  this.emergente.showStaticModal();
+  this.emergente.showLargeModal();
 }
 }
