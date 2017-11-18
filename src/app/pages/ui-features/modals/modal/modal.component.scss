@@ -3,7 +3,7 @@ button {
   margin: 0 0.75rem 2rem 0;
 }
 form {
-  margin: 2rem 2rem 2rem 2rem;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
   color:white !important;
   text-align: left;
   font-size: 20px;
@@ -11,8 +11,14 @@ form {
 .modal-header {
   background-color: #00d977;
 }
-.pre-form {
-  margin: 1rem 1rem 1rem 1rem;
-  border-radius: 10px 35px;
+.row {
+  margin: 0rem 0rem 0rem 0rem;
+  border-radius: 25px 5px;
    background-color: #7659ff;
+}
+.modal-body {
+  margin: 1rem 1rem 1rem 1rem;
+}
+.form-group2 {
+  margin: 0.1rem 0.1rem 0.1rem 0.1rem;
 }

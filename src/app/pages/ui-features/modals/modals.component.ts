@@ -14,7 +14,7 @@ export class ModalsComponent {
 
   showLargeModal() {
     const activeModal = this.modalService.open(ModalComponent, { 
-      size: 'lg',
+      size: 'sm',
       backdrop: 'static',
       keyboard: false,
       container: 'nb-layout' ,
