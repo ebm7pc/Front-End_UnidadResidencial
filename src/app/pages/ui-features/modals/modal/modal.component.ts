@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Input } from '@angular/core/src/metadata/directives';
+import { Router, ActivatedRoute } from '@angular/router';
 import { RegistroService } from '../../../forms/form-inputs/form-inputs.service';
 import { FormInputsComponent } from '../../../forms/form-inputs/form-inputs.component';
 import { ModalService } from './modal.service';
@@ -32,7 +33,9 @@ export class ModalComponent {
 
   constructor(private activeModal: NgbActiveModal,
     public registros: RegistroService,
-    public regVehiculo: ModalService, ) { }
+    public regVehiculo: ModalService,
+    private router: Router,
+    private route: ActivatedRoute, ) { }
 
   closeModal() {
     this.registros.registrar(this.ficho,
@@ -41,6 +44,18 @@ export class ModalComponent {
         if (result == "Se guardó el cliente") {
           this.messages[1] = "El usuario  con ficho " + this.ficho + " se registró";
           this.errors = [];
+          setTimeout(() => {
+            this.regVehiculo.registrar(this.placa, this.marca, this.ficho).subscribe(result => {
+              if (result == "Se guardó el vehiculo correctamente") {
+                this.messages[2] = "El vehícuo se guardó";
+                this.errors = [];
+              }
+              else {
+                this.errors[2] = result;
+                this.messages = [];
+              }
+            });
+          }, 5000);
         }
         else {
           this.errors[1] = result;
@@ -48,19 +63,9 @@ export class ModalComponent {
         }
       });
 
+      
       setTimeout(() => {
-        this.regVehiculo.registrar(this.placa, this.marca, this.ficho).subscribe(result => {
-          if (result == "Se guardó el vehiculo correctamente") {
-            this.messages[1] = "El vehícuo se guardó";
-            this.errors = [];
-          }
-          else {
-            this.errors[1] = result;
-            this.messages = [];
-          }
-        });
-      }, 5000);
-
     this.activeModal.close();
+  }, 10000);
   }
 }

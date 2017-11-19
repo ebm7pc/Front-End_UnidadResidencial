@@ -5,51 +5,81 @@
       <nb-card-header>Registro de visitante</nb-card-header>
       <nb-card-body>
         <form (ngSubmit)="form.form.valid && registrar()" #form="ngForm" autocomplete="nope">
+            <div *ngIf="errors && errors.length > 0" class="alert alert-danger" role="alert">
+                <div *ngFor="let error of errors">{{ error }}</div>
+            </div>
+            
+            <div *ngIf="messages && messages.length > 0" class="alert alert-success" role="alert">
+                <div *ngFor="let message of messages">{{ message }}</div>
+            </div>
+
+
           <div class="form-group">
             <label for="exampleInputEmail1">Número de ficho</label>
-            <input type="number" class="form-control" name="ficho" id="Nficho" placeholder="Número de ficho" [(ngModel)]="user.ficho">
+            <input type="number" class="form-control" name="ficho" id="Nficho" size="10" placeholder="Número de ficho" [(ngModel)]="user.ficho"
+            #ficho="ngModel" [class.form-control-danger]="ficho.invalid && ficho.touched" autofocus [required]="true">
+            <small  align="left" class="form-text error" *ngIf="ficho.invalid && ficho.touched && ficho.errors?.required">
+                Numero de ficho requerido!</small>
           </div>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="inputFirstName">Nombres</label>
-                <input type="text" class="form-control" id="inputFirstName" placeholder="Nombres" [(ngModel)]="user.nombre" name="nombre">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Nombres" [(ngModel)]="user.nombre" name="nombre"
+                #nombre="ngModel" [class.form-control-danger]="nombre.invalid && nombre.touched" autofocus [required]="true">
+                <small  align="left" class="form-text error" *ngIf="nombre.invalid && nombre.touched && nombre.errors?.required">
+                    Nombres requeridos!</small>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="inputLastName">Apellidos</label>
-                <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos" [(ngModel)]="user.apellido" name="apellido">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos" [(ngModel)]="user.apellido" name="apellido"
+                #ape="ngModel" [class.form-control-danger]="ape.invalid && ape.touched" autofocus [required]="true">
+                <small  align="left" class="form-text error" *ngIf="ape.invalid && ape.touched && ape.errors?.required">
+                    Apellidos requeridos!</small>
               </div>
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Identificación</label>
-            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificacíon" [(ngModel)]="user.identif" name="identif">
+            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificacíon" [(ngModel)]="user.identif" name="identif"
+            #id="ngModel" [class.form-control-danger]="id.invalid && id.touched" autofocus [required]="true">
+            <small  align="left" class="form-text error" *ngIf="id.invalid && id.touched && id.errors?.required">
+                Identificacion requerida!</small>
           </div>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="inputFirstName">Responsable </label>
-                <input type="text" class="form-control" id="inputFirstName" placeholder="Responsable de recibir al visitante" [(ngModel)]="user.responsable" name="resp">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Responsable de recibir al visitante" [(ngModel)]="user.responsable" name="resp"
+                #res="ngModel" [class.form-control-danger]="res.invalid && res.touched" autofocus [required]="true">
+                <small  align="left" class="form-text error" *ngIf="res.invalid && res.touched && res.errors?.required">
+                    Responsable requerido!</small>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="inputLastName">Apartamento</label>
-                <input type="text" class="form-control" id="inputLastName" placeholder="Apartamento de destino" [(ngModel)]="user.apartamento" name="apto">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Apartamento de destino" [(ngModel)]="user.apartamento" name="apto"
+                #apa="ngModel" [class.form-control-danger]="apa.invalid && apa.touched" autofocus [required]="true">
+                <small  align="left" class="form-text error" *ngIf="apa.invalid && apa.touched && apa.errors?.required">
+                    Apartamento de destino requerido!</small>
               </div>
             </div>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Fecha de salida</label>
-            <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Fecha de posible salida de la unidad" [(ngModel)]="user.fechaSalida" (ngModelChange)="formatoFecha()" name="salida">
+            <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Fecha de posible salida de la unidad" [(ngModel)]="user.fechaSalida" (ngModelChange)="formatoFecha()" name="salida"
+            #fecha="ngModel" [class.form-control-danger]="fecha.invalid && fecha.touched" autofocus [required]="true">
+            <small  align="left" class="form-text error" *ngIf="fecha.invalid && fecha.touched && fecha.errors?.required">
+                Fecha de salida requerida!</small>
           </div>
           <div class="form-group">
             <nb-checkbox name="tienevehi" [(ngModel)]="user.tieneVehi">Tiene vehículo</nb-checkbox>
           </div>
           <div class="form-group">
-            <button class="btn btn-success">Registrar</button>
+            <button [disabled]="!form.valid" class="btn btn-success">Registrar</button>
           </div>
         </form>
       </nb-card-body>

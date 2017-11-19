@@ -16,15 +16,13 @@
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Número de ficho</label>
-                <input type="number" name="ficho" [(ngModel)]="user.id" class="form-control" id="nficho" placeholder="Ingrese el número de ficho del visitante" 
+                <input type="number" name="ficho" [(ngModel)]="user.id" class="form-control" id="nficho" max="9" placeholder="Ingrese el número de ficho del visitante" 
                 #ficho="ngModel" [class.form-control-danger]="ficho.invalid && ficho.touched" autofocus [required]="true">
                 <small  align="left" class="form-text error" *ngIf="ficho.invalid && ficho.touched && ficho.errors?.required">
                     Numero de ficho requerido!</small>
               </div>             
-              <div class="form-group accept-group col-sm-12">
-                  <nb-checkbox name="rememberMe" [(ngModel)]="user.rememberMe">Recordarme</nb-checkbox>
-              </div>
-              <button [disabled]="!form.valid" type="submit" class="btn btn-success">Verificar</button>
+              
+              <button [disabled]="!form.valid"  class="btn btn-success">Verificar</button>
             </form>
           </nb-card-body>
         </nb-card>
