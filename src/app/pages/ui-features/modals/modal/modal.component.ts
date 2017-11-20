@@ -46,8 +46,8 @@ export class ModalComponent {
           this.errors = [];
           setTimeout(() => {
             this.regVehiculo.registrar(this.placa, this.marca, this.ficho).subscribe(result => {
-              if (result == "Se guardó el vehiculo correctamente") {
-                this.messages[2] = "El vehícuo se guardó";
+              if (result == "Se guardó el vehículo correctamente") {
+                this.messages[2] = "El vehículo se guardó";
                 this.errors = [];
               }
               else {
@@ -55,7 +55,7 @@ export class ModalComponent {
                 this.messages = [];
               }
             });
-          }, 5000);
+          }, 1500);
         }
         else {
           this.errors[1] = result;
@@ -66,6 +66,6 @@ export class ModalComponent {
       
       setTimeout(() => {
     this.activeModal.close();
-  }, 10000);
+  }, 4000);
   }
 }
